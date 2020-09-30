@@ -33,10 +33,9 @@ Things you may want to cover:
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| id(PK)             | デフォルト          | null: false             |
-| nickname           | devise のデフォルト | null: false,index: true |
-| email              | devise のデフォルト | null: false             |
-| encrypted_password | integer             | null: false             |
+| nickname           | string              | null: false,index: true |
+| email              | string              | null: false             |
+| encrypted_password | string              | null: false             |
 | first_name         | string              | null: false             |
 | last_name          | string              | null: false             |
 | first_name_kana    | string              | null: false             |
@@ -52,7 +51,7 @@ Things you may want to cover:
 
 | Column       | Type    | Options           |
 |--------------|---------|-------------------|
-| postal_code  | string | null: false       |
+| postal_code  | string | null: false        |
 | prefecture   | integer | null: false       |
 | city         | string  | null: false       |
 | address      | string  | null: false       |
@@ -68,7 +67,6 @@ Things you may want to cover:
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
-| id(PK)                              | デフォルト | null: false       |
 | name                                | string     | null: false       |
 | price                               | integer    | null: false       |
 | info                                | text       | null: false       |
