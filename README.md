@@ -82,7 +82,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :item_transaction
 
-## item_transactions table
+## transactions table
 
 | Column      | Type    | Options           |
 |-------------|---------|-------------------|
