@@ -61,4 +61,6 @@ end
   gem 'rspec-rails', '~> 4.0.0'
 
   gem 'active_hash'
+
 end
+gem 'devise'
