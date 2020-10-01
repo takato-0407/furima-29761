@@ -23,11 +23,7 @@ Things you may want to cover:
 
 * ...
 
-
-
-///
-
-## DB 設計
+## ## DB 設計
 
 ## users table
 
@@ -45,7 +41,7 @@ Things you may want to cover:
 ### Association
 
 * has_many :items
-* has_many :item_transactions
+* has_many :item_purchases
 
 ## addresses table
 
@@ -57,11 +53,11 @@ Things you may want to cover:
 | address      | string  | null: false       |
 | building     | string  |                   |
 | phone_number | string  | null: false       |
-| item_transaction(FK)  | references | foreign_key: true |
+| item_purchases(FK)  | references | foreign_key: true |
 
 ### Association
 
-* belongs_to :item_transaction
+* belongs_to :item_purchases
 
 ## items table
 
@@ -80,9 +76,20 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :item_transaction
+- has_one :item_purchases
 
-## transactions table
+## item_purchases table
+
+| Column      | Type    | Options           |
+|-------------|---------|-------------------|
+| item(FK) | references | foreign_key: true |
+| user(FK) | references | foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
+- has_one :address
 
 | Column      | Type    | Options           |
 |-------------|---------|-------------------|
