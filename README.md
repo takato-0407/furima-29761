@@ -57,7 +57,7 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :item_purchases
+* belongs_to :item_purchase
 
 ## items table
 
@@ -91,13 +91,3 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :address
 
-| Column      | Type    | Options           |
-|-------------|---------|-------------------|
-| item(FK) | references | foreign_key: true |
-| user(FK) | references | foreign_key: true |
-
-### Association
-
-- belongs_to :item
-- belongs_to :user
-- has_one :address
