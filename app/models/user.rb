@@ -3,4 +3,26 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, format: {with:/[a-z]\d{6}/}
+  validates :email, format: {with:/@.+/}
+  with_options presence: true, format: { with: /\A[ぁ-ん一-龥]+\z/} do
+    validates :first_name
+    validates :last_name
+  end
+  with_options presence: true, format: { with: /\A[ァ-ン]+\z/} do
+    validates :first_name_kana
+    validates :last_name_kana
+
+    <% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  end
 end
