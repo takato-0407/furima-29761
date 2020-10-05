@@ -14,15 +14,5 @@ class User < ApplicationRecord
   with_options presence: true, format: { with: /\A[ァ-ン]+\z/} do
     validates :first_name_kana
     validates :last_name_kana
-
-    <% if @user.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger">
-    <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
   end
 end
