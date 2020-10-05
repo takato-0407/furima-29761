@@ -48,6 +48,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 4.0.0'
+
+  gem 'active_hash'
+  gem 'factory_bot_rails'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -56,11 +61,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'rubocop', require: false
 end
-  group :production do
-  gem 'rails_12factor'
-  gem 'rspec-rails', '~> 4.0.0'
+group :production do
+gem 'rails_12factor'
+gem 'rspec-rails', '~> 4.0.0'
 
-  gem 'active_hash'
+gem 'active_hash'
+gem 'factory_bot_rails'
 
 end
 gem 'devise'
