@@ -70,3 +70,4 @@ gem 'factory_bot_rails'
 
 end
 gem 'devise'
+gem 'active_hash'
