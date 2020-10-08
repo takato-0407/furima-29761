@@ -1,5 +1,19 @@
-// イベントを指定
-// →IDを取得変数もしいくは定数にいれる
-// 値が入力された時に発火するイベント
-// →入力された値を取得定数にいれる
-// 計算式を記述
+
+
+function pullDown() {
+
+  const pullDownButton = document.getElementById("item-price") 
+  const pullDownParents = document.getElementById("add-tax-price")
+  const pullDownChild = document.getElementById("profit")
+
+  pullDownButton.addEventListener('keyup', function(){
+    let price = pullDownButton.value;
+    let fee = price * 0.1
+    let gains = price - fee
+    pullDownParents.innerHTML = fee
+    pullDownChild.innerHTML = gains
+    })
+  }
+
+
+window.addEventListener('load', pullDown)
