@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   
   validates :name, presence: true
-  validates :price, format: {with://}
+  validates :price, presence: true
   validates :info, presence: true
   validates :scheduled_delivery_id, presence: true
   validates :shipping_fee_status_id, presence: true
