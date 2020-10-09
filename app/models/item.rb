@@ -5,12 +5,17 @@ class Item < ApplicationRecord
   has_one_attached :image
   
   validates :name, presence: true
-  validates :price, presence: true
+  validates_inclusion_of :price, in: 300...9999999
   validates :info, presence: true
-  validates :scheduled_delivery_id, presence: true
-  validates :shipping_fee_status_id, presence: true
-  validates :prefecture_id, presence: true
-  validates :sales_status_id, presence: true
-  validates :category_id, presence: true
-  validates :image, presence: true
+  with_options presence: true, numericality: { other_than: 1} do
+    validates :category_id
+    validates :prefecture_id
+    validates :scheduled_delivery_id
+    validates :shipping_fee_status_id
+    validates :sales_status_id
+  end
 end
+
+
+    
+

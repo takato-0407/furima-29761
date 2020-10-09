@@ -3,11 +3,11 @@ FactoryBot.define do
     name                   {"aaa"}
     price                  {"1111"}
     info                   {"aaaa"}
-    scheduled_delivery_id  {1}
-    shipping_fee_status_id {1}
-    prefecture_id          {1}
-    sales_status_id        {1}
-    category_id            {1}
+    scheduled_delivery_id  {2}
+    shipping_fee_status_id {2}
+    prefecture_id          {2}
+    sales_status_id        {2}
+    category_id            {2}
     user                
     
     after(:build) do |item|
