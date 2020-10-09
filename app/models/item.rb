@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   
   validates :name, presence: true
+  validates :image, presence: true
   validates_inclusion_of :price, in: 300...9999999
   validates :info, presence: true
   with_options presence: true, numericality: { other_than: 1} do
@@ -13,6 +14,7 @@ class Item < ApplicationRecord
     validates :scheduled_delivery_id
     validates :shipping_fee_status_id
     validates :sales_status_id
+
   end
 end
 
