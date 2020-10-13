@@ -1,4 +1,8 @@
 class Address < ApplicationRecord
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :prefecture
+
   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/}
   validates :postal_code, presence: true
   validates :prefecture, presence: true
