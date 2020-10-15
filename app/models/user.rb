@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :items
   has_many :item_purchases
 
-  
   validates :nickname, presence: true
   validates :password, format: {with:/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
   validates :email, format: {with:/@.+/}
