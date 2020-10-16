@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
     nickname              {"abe"}
-    email                 {"kkk@gmail.com"}
+    email                 {Faker::Internet.email}
     password              {"1234ya"}
     password_confirmation {"1234ya"}
     first_name            {"渡邉"}
@@ -14,3 +14,5 @@ end
 # // モデルのバリデーションが正しいく動いているかどうかの確認なので
 # // パスワード→英数字混合にしましょう
 # // factoryの記述→新規登録の時に必要なもの全てを記載しましょう
+
+# Facker

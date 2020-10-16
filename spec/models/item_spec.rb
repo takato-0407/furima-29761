@@ -2,11 +2,11 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   describe '出品機能' do
     before do
+      # binding.pry
       @item = FactoryBot.build(:item)
     end
     context '内容に問題がない場合' do
       it "全て正常" do
-         binding.pry
         expect(@item.valid?).to eq true
       end
     end

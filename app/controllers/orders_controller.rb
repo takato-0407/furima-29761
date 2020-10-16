@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
-    @item_purchase_address = ItemPurchaseAddress.new
+    if @item.item_purchase.present? 
+      redirect_to root_path
+    else
+      @item_purchase_address = ItemPurchaseAddress.new
+    end
   end
 
   def create
@@ -30,5 +34,7 @@ class OrdersController < ApplicationController
       currency: 'jpy'                 
     )
   end
+
+
   
 end
