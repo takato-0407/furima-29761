@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :move_to_root, only: [:index]
 
   def index
     if @item.item_purchase.present?
@@ -38,5 +39,14 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_root
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
+    if user_signed_in? && current_user.id == @item.user_id 
+      redirect_to root_path
+    end
   end
 end
