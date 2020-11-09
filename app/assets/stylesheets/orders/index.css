@@ -19,42 +19,47 @@
   font-size: 22px;
 }
 
-/* 購入内容の表示 */
+/* 店舗名と最寄駅と写真の幅空間 */
 .buy-item-info {
   height: 150px;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid  #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+/* 写真の幅 */
 .buy-item-img {
   margin-right: 20px;
   height: 130px;
   width: 250px;
   object-fit: contain;
+  
 }
-
+/*店舗名と最寄駅の空間*/
 .buy-item-right-content {
   display: flex;
   flex-direction: column;
 }
-
+/*店舗名*/
 .buy-item-text {
-  font-size: 20px;
+  border:5px solid #f5f5f5; 
+  padding: 5px ;
+  font-size: 15px;
+  font-weight: bold;
 }
-
+/*店舗名と最寄駅の間隔*/
 .buy-item-price {
   display: flex;
   font-weight: bold;
   align-items: center;
   margin-top: 10px;
 }
-
+/*最寄駅*/
 .item-price-text {
+  padding: 20px 20px 20px 40px;
   font-size: 15px;
 }
-
+/*(最寄駅)の方*/
 .item-price-sub-text {
   font-size: 12px;
 }
@@ -70,27 +75,29 @@
   border-bottom: 2px solid #f5f5f5;
   font-weight: bold;
 }
-
+/* /客単価*/
 .item-payment-title {
   font-size: 20px;
 }
-
+/* /値段 */
 .item-payment-price {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 /* /支払額の表示 */
 
 /* カード情報の入力 */
 .credit-card-form {
-  border-bottom: 2px solid #f5f5f5;
-  margin-top: 15px;
-  padding-bottom: 30px;
+  border: 2px solid #f5f5f5;
+  margin-top: 50px;
+  padding-bottom: 10px;
+  
 }
 
 .info-input-haedline {
   text-align: center;
   font-weight: bold;
+  padding: 30px 0px 0px 0px;
   font-size: 20px;
 }
 

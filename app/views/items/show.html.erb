@@ -27,7 +27,7 @@
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && current_user.id == @item.user_id %>
-    <%= link_to '商品の編集',  edit_item_path, method: :get, class: "item-red-btn" %>
+    <%= link_to '店舗の編集',  edit_item_path, method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
     <% else %>
@@ -35,7 +35,7 @@
     <% if user_signed_in? %>
     <% if @item.item_purchase.present? %>
     <% else %>
-    <%= link_to '購入画面に進む',item_orders_path(@item.id),class:"item-red-btn"%>
+    <%= link_to '予約画面に進む',item_orders_path(@item.id),class:"item-red-btn"%>
     <% end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
     <% end %>
@@ -49,27 +49,27 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <th class="detail-item">店舗名</th>
           <td class="detail-value"><%= @item.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
+          <th class="detail-item">店舗形態</th>
           <td class="detail-value"><%= @item.category.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">予約最大人数</th>
           <td class="detail-value"><%= @item.sales_status.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <th class="detail-item">最寄駅</th>
           <td class="detail-value"><%= @item.shipping_fee_status.name%></td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
+          <th class="detail-item">営業時間</th>
           <td class="detail-value"><%= @item.prefecture.name%></td>
         </tr>
         <tr>
-          <th class="detail-item">発送日の目安</th>
+          <th class="detail-item">店舗の特徴</th>
           <td class="detail-value"><%= @item.scheduled_delivery.name %></td>
         </tr>
       </tbody>
